@@ -1,134 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Produkte | HardwareHub</title>
 
-    <link rel="stylesheet" href="../css/produkte.css">
-</head>
+    <link rel="stylesheet" href="../css/produkte.css" />
+  </head>
 
-<body>
-
-<header class="header">
-    <div class="header-container">
-        <a href="../index.html" class="logo">HardwareHub</a>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="../index.html#home-section" class="logo">HardwareHub</a>
 
         <nav class="navigation">
-            <a href="../index.html">Startseite</a>
-            <a href="produkte.html" class="active">Produkte</a>
-            <a href="angebote.html">Angebote</a>
-            <a href="ueber-uns.html">Über uns</a>
-            <a href="kontakt.html">Kontakt</a>
+          <a href="../index.html#home-section">Startseite</a>
 
-            <a href="warenkorb.html" class="cart-link">
-                Warenkorb
-                <span id="cart-count">0</span>
-            </a>
+          <a href="#" class="active">Produkte</a>
+
+          <a href="../index.html#angebote-component">Angebote</a>
+          <a href="../index.html#uber-uns-component">Über uns</a>
+          <a href="../index.html#kontakt-component">Kontakt</a>
+
+          <a href="warenkorb.html" class="cart-link">
+            Warenkorb
+            <span id="cart-count">0</span>
+          </a>
         </nav>
-    </div>
-</header>
+      </div>
+    </header>
 
-<main class="main-container">
-
-    <section class="page-heading">
+    <main class="main-container">
+      <section class="page-heading">
         <p class="eyebrow">Hardware und Zubehör</p>
         <h1>Unsere Produkte</h1>
         <p>
-            Wähle links eine Kategorie aus und entdecke unsere aktuellen Produkte.
+          Wähle links eine Kategorie aus und entdecke unsere aktuellen Produkte.
         </p>
-    </section>
+      </section>
 
-    <section class="shop-layout">
-
+      <section class="shop-layout">
         <!-- سمت چپ: دسته‌بندی‌ها -->
         <aside class="category-sidebar">
-            <h2>Kategorien</h2>
+          <h2>Kategorien</h2>
 
-            <button class="category-button active" data-category="alle">
-                Alle Produkte
-            </button>
+          <button class="category-button active" data-category="alle">
+            Alle Produkte
+          </button>
 
-            <button class="category-button" data-category="laptop">
-                Laptops
-            </button>
+          <button class="category-button" data-category="laptop">
+            Laptops
+          </button>
 
-            <button class="category-button" data-category="monitor">
-                Monitore
-            </button>
+          <button class="category-button" data-category="monitor">
+            Monitore
+          </button>
 
-            <button class="category-button" data-category="headphone">
-                Kopfhörer
-            </button>
+          <button class="category-button" data-category="headphone">
+            Kopfhörer
+          </button>
 
-            <button class="category-button" data-category="case">
-                PC-Gehäuse
-            </button>
+          <button class="category-button" data-category="case">
+            PC-Gehäuse
+          </button>
 
-            <button class="category-button" data-category="keyboard">
-                Tastaturen
-            </button>
+          <button class="category-button" data-category="keyboard">
+            Tastaturen
+          </button>
 
-            <button class="category-button" data-category="mouse">
-                Mäuse
-            </button>
+          <button class="category-button" data-category="mouse">Mäuse</button>
 
-            <button class="category-button" data-category="smartphone">
-                Smartphones
-            </button>
+          <button class="category-button" data-category="smartphone">
+            Smartphones
+          </button>
 
-            <button class="category-button" data-category="tablet">
-                Tablets
-            </button>
+          <button class="category-button" data-category="tablet">
+            Tablets
+          </button>
 
-            <button class="category-button" data-category="storage">
-                Speicher
-            </button>
+          <button class="category-button" data-category="storage">
+            Speicher
+          </button>
 
-            <button class="category-button" data-category="component">
-                PC-Komponenten
-            </button>
+          <button class="category-button" data-category="component">
+            PC-Komponenten
+          </button>
         </aside>
 
         <!-- سمت راست: محصولات -->
         <section class="products-section">
-
-            <div class="products-header">
-                <div>
-                    <p class="eyebrow">Kategorie</p>
-                    <h2 id="category-title">Alle Produkte</h2>
-                </div>
-
-                <div class="search-wrapper">
-                    <label for="product-search">Produkt suchen</label>
-                    <input
-                        type="search"
-                        id="product-search"
-                        placeholder="z. B. Laptop oder Monitor"
-                    >
-                </div>
+          <div class="products-header">
+            <div>
+              <p class="eyebrow">Kategorie</p>
+              <h2 id="category-title">Alle Produkte</h2>
             </div>
 
-            <div id="products-grid" class="products-grid"></div>
+            <div class="search-wrapper">
+              <label for="product-search">Produkt suchen</label>
+              <input
+                type="search"
+                id="product-search"
+                placeholder="z. B. Laptop oder Monitor"
+              />
+            </div>
+          </div>
 
-            <p id="no-products" class="no-products" hidden>
-                Keine Produkte gefunden.
-            </p>
+          <div id="products-grid" class="products-grid"></div>
 
+          <p id="no-products" class="no-products" hidden>
+            Keine Produkte gefunden.
+          </p>
         </section>
+      </section>
+    </main>
 
-    </section>
+    <div id="notification" class="notification" aria-live="polite"></div>
 
-</main>
+    <footer class="footer">
+      <p>&copy; 2026 HardwareHub. Alle Rechte vorbehalten.</p>
+    </footer>
 
-<div id="notification" class="notification" aria-live="polite"></div>
-
-<footer class="footer">
-    <p>&copy; 2026 HardwareHub. Alle Rechte vorbehalten.</p>
-</footer>
-
-<script src="../js/produkte.js"></script>
-
-</body>
+    <script src="../js/produkte.js"></script>
+  </body>
 </html>

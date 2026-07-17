@@ -1,0 +1,96 @@
+.about-page {
+  padding: 40px 20px;
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 40px 0;
+}
+
+.about-hero {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-hero-text h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.lead-text {
+  font-size: 1.2rem;
+  color: #0066cc;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.about-hero-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.company-history h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px;
+  border-left: 3px solid #0066cc;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #0066cc;
+  border: 3px solid #fff;
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: #0066cc;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.6;
+}

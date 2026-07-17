@@ -1,269 +1,207 @@
 "use strict";
 
-const contactForm = document.getElementById("contactForm");
-const messageInput = document.getElementById("message");
-const characterCounter = document.getElementById("characterCounter");
-const successMessage = document.getElementById("successMessage");
-const privacyInput = document.getElementById("privacy");
-const privacyError = document.getElementById("privacyError");
-
+// --- 1. عناصر ثابتة موجودة دائماً في الـ index.html (تعمل فوراً) ---
 const menuButton = document.getElementById("menuButton");
 const navList = document.getElementById("navList");
-
 const currentYear = document.getElementById("currentYear");
 
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
 
-// Aktuelles Jahr im Footer
-currentYear.textContent = new Date().getFullYear();
-
-
-// Mobiles Menü
-menuButton.addEventListener("click", () => {
+if (menuButton && navList) {
+  menuButton.addEventListener("click", () => {
     navList.classList.toggle("open");
-});
-
-
-// Zeichen zählen
-messageInput.addEventListener("input", () => {
-    const maximumCharacters = 500;
-
-    if (messageInput.value.length > maximumCharacters) {
-        messageInput.value = messageInput.value.slice(
-            0,
-            maximumCharacters
-        );
-    }
-
-    characterCounter.textContent =
-        `${messageInput.value.length} / ${maximumCharacters}`;
-});
-
-
-// Fehlermeldung anzeigen
-function showError(input, message) {
-    input.classList.add("invalid");
-
-    const formGroup = input.closest(".form-group");
-
-    if (formGroup) {
-        const errorElement =
-            formGroup.querySelector(".error-message");
-
-        errorElement.textContent = message;
-    }
+  });
 }
 
-
-// Fehlermeldung entfernen
-function clearError(input) {
-    input.classList.remove("invalid");
-
-    const formGroup = input.closest(".form-group");
-
-    if (formGroup) {
-        const errorElement =
-            formGroup.querySelector(".error-message");
-
-        errorElement.textContent = "";
-    }
-}
-
-
-// E-Mail prüfen
+// --- 2. دالة مساعدة للتحقق من الإيميل ---
 function isValidEmail(email) {
-    const emailPattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    return emailPattern.test(email);
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
 }
 
+// --- 3. الـ Newsletter (موجود دائماً أو يعمل بالتفويض) ---
+document.addEventListener("submit", (event) => {
+  const newsletterForm = event.target.closest(".newsletter-form");
+  if (!newsletterForm) return;
 
-// Formular prüfen
-function validateForm() {
-    let isValid = true;
+  event.preventDefault();
+  const emailInput = newsletterForm.querySelector("input");
 
-    const firstName =
-        document.getElementById("firstName");
+  if (!isValidEmail(emailInput.value.trim())) {
+    alert("Bitte gib eine gültige E-Mail-Adresse ein.");
+    return;
+  }
 
-    const lastName =
-        document.getElementById("lastName");
-
-    const email =
-        document.getElementById("email");
-
-    const subject =
-        document.getElementById("subject");
-
-    const message =
-        document.getElementById("message");
-
-
-    // Vorname
-    if (firstName.value.trim().length < 2) {
-        showError(
-            firstName,
-            "Bitte gib einen gültigen Vornamen ein."
-        );
-
-        isValid = false;
-    } else {
-        clearError(firstName);
-    }
-
-
-    // Nachname
-    if (lastName.value.trim().length < 2) {
-        showError(
-            lastName,
-            "Bitte gib einen gültigen Nachnamen ein."
-        );
-
-        isValid = false;
-    } else {
-        clearError(lastName);
-    }
-
-
-    // E-Mail
-    if (!isValidEmail(email.value.trim())) {
-        showError(
-            email,
-            "Bitte gib eine gültige E-Mail-Adresse ein."
-        );
-
-        isValid = false;
-    } else {
-        clearError(email);
-    }
-
-
-    // Betreff
-    if (subject.value === "") {
-        showError(
-            subject,
-            "Bitte wähle einen Betreff aus."
-        );
-
-        isValid = false;
-    } else {
-        clearError(subject);
-    }
-
-
-    // Nachricht
-    if (message.value.trim().length < 10) {
-        showError(
-            message,
-            "Die Nachricht muss mindestens 10 Zeichen enthalten."
-        );
-
-        isValid = false;
-    } else {
-        clearError(message);
-    }
-
-
-    // Datenschutz
-    if (!privacyInput.checked) {
-        privacyError.textContent =
-            "Bitte akzeptiere die Datenschutzerklärung.";
-
-        isValid = false;
-    } else {
-        privacyError.textContent = "";
-    }
-
-    return isValid;
-}
-
-
-// Fehler während Eingabe entfernen
-const formInputs = contactForm.querySelectorAll(
-    "input, select, textarea"
-);
-
-formInputs.forEach((input) => {
-    input.addEventListener("input", () => {
-        clearError(input);
-
-        if (input === privacyInput) {
-            privacyError.textContent = "";
-        }
-    });
-
-    input.addEventListener("change", () => {
-        clearError(input);
-
-        if (input === privacyInput) {
-            privacyError.textContent = "";
-        }
-    });
+  alert("Vielen Dank für deine Newsletter-Anmeldung!");
+  newsletterForm.reset();
 });
 
+// ==============================================================
+// --- 4. كود الاتصال الأصلي الخاص بك (يعمل الآن عبر الـ Delegation) ---
+// ==============================================================
 
-// Formular absenden
-contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+// [دوال المساعدة الأصلية الخاصة بك]
+function showError(input, message) {
+  input.classList.add("invalid");
+  const formGroup = input.closest(".form-group");
+  if (formGroup) {
+    const errorElement = formGroup.querySelector(".error-message");
+    if (errorElement) errorElement.textContent = message;
+  }
+}
 
-    successMessage.style.display = "none";
+function clearError(input) {
+  input.classList.remove("invalid");
+  const formGroup = input.closest(".form-group");
+  if (formGroup) {
+    const errorElement = formGroup.querySelector(".error-message");
+    if (errorElement) errorElement.textContent = "";
+  }
+}
 
-    if (!validateForm()) {
-        return;
+function validateForm(form) {
+  let isValid = true;
+
+  const firstName = form.querySelector("#firstName");
+  const lastName = form.querySelector("#lastName");
+  const email = form.querySelector("#email");
+  const subject = form.querySelector("#subject");
+  const message = form.querySelector("#message");
+  const privacyInput = form.querySelector("#privacy");
+  const privacyError = form.querySelector("#privacyError");
+
+  // Vorname
+  if (firstName.value.trim().length < 2) {
+    showError(firstName, "Bitte gib einen gültigen Vornamen ein.");
+    isValid = false;
+  } else {
+    clearError(firstName);
+  }
+
+  // Nachname
+  if (lastName.value.trim().length < 2) {
+    showError(lastName, "Bitte gib einen gültigen Nachnamen ein.");
+    isValid = false;
+  } else {
+    clearError(lastName);
+  }
+
+  // E-Mail
+  if (!isValidEmail(email.value.trim())) {
+    showError(email, "Bitte gib eine gültige E-Mail-Adresse ein.");
+    isValid = false;
+  } else {
+    clearError(email);
+  }
+
+  // Betreff
+  if (subject.value === "") {
+    showError(subject, "Bitte wähle einen Betreff aus.");
+    isValid = false;
+  } else {
+    clearError(subject);
+  }
+
+  // Nachricht
+  if (message.value.trim().length < 10) {
+    showError(message, "Die Nachricht muss mindestens 10 Zeichen enthalten.");
+    isValid = false;
+  } else {
+    clearError(message);
+  }
+
+  // Datenschutz
+  if (!privacyInput.checked) {
+    privacyError.textContent = "Bitte akzeptiere die Datenschutzerklärung.";
+    isValid = false;
+  } else {
+    privacyError.textContent = "";
+  }
+
+  return isValid;
+}
+
+// --- مراقبة الأحداث داخل الـ Form المحقون ديناميكياً ---
+
+// أ) عداد الحروف (Character Counter) وإزالة الأخطاء أثناء الكتابة
+document.addEventListener("input", (event) => {
+  const target = event.target;
+  const form = target.closest("#contactForm");
+  if (!form) return; // إذا لم نكن داخل فورم الاتصال، تجاهل الأمر
+
+  // إذا كانت الكتابة داخل حقل الرسالة (العداد)
+  if (target.id === "message") {
+    const maximumCharacters = 500;
+    if (target.value.length > maximumCharacters) {
+      target.value = target.value.slice(0, maximumCharacters);
     }
+    const characterCounter = form.querySelector("#characterCounter");
+    if (characterCounter) {
+      characterCounter.textContent = `${target.value.length} / ${maximumCharacters}`;
+    }
+  }
 
-    const submitButton =
-        contactForm.querySelector(".submit-button");
+  // إزالة الخطأ فوراً أثناء الكتابة
+  clearError(target);
+  const privacyInput = form.querySelector("#privacy");
+  const privacyError = form.querySelector("#privacyError");
+  if (target === privacyInput && privacyError) {
+    privacyError.textContent = "";
+  }
+});
 
-    submitButton.disabled = true;
+// ب) إزالة الخطأ عند تغيير الخيارات (للقوائم والـ Checkbox)
+document.addEventListener("change", (event) => {
+  const target = event.target;
+  const form = target.closest("#contactForm");
+  if (!form) return;
+
+  clearError(target);
+  const privacyInput = form.querySelector("#privacy");
+  const privacyError = form.querySelector("#privacyError");
+  if (target === privacyInput && privacyError) {
+    privacyError.textContent = "";
+  }
+});
+
+// ج) إرسال النموذج (Form Submit)
+document.addEventListener("submit", (event) => {
+  const form = event.target;
+  if (form.id !== "contactForm") return; // نتأكد أنه فورم الاتصال
+
+  event.preventDefault();
+  const successMessage = form.querySelector("#successMessage");
+  const characterCounter = form.querySelector("#characterCounter");
+
+  if (successMessage) successMessage.style.display = "none";
+
+  if (!validateForm(form)) {
+    return;
+  }
+
+  const submitButton = form.querySelector(".submit-button");
+  submitButton.disabled = true;
+  submitButton.innerHTML =
+    '<i class="fa-solid fa-spinner fa-spin"></i> Wird gesendet...';
+
+  setTimeout(() => {
+    if (successMessage) successMessage.style.display = "flex";
+
+    form.reset();
+
+    if (characterCounter) characterCounter.textContent = "0 / 500";
+
+    submitButton.disabled = false;
     submitButton.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Wird gesendet...';
+      '<i class="fa-regular fa-paper-plane"></i> Nachricht senden';
 
-
-    /*
-        این بخش فقط ارسال را شبیه‌سازی می‌کند.
-        برای ارسال واقعی باید Backend، Formspree یا EmailJS اضافه شود.
-    */
-
-    setTimeout(() => {
-        successMessage.style.display = "flex";
-
-        contactForm.reset();
-
-        characterCounter.textContent = "0 / 500";
-
-        submitButton.disabled = false;
-        submitButton.innerHTML =
-            '<i class="fa-regular fa-paper-plane"></i> Nachricht senden';
-
-        successMessage.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-    }, 1200);
-});
-
-
-// Newsletter
-const newsletterForm =
-    document.querySelector(".newsletter-form");
-
-newsletterForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const emailInput =
-        newsletterForm.querySelector("input");
-
-    if (!isValidEmail(emailInput.value.trim())) {
-        alert(
-            "Bitte gib eine gültige E-Mail-Adresse ein."
-        );
-
-        return;
+    if (successMessage) {
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
     }
-
-    alert(
-        "Vielen Dank für deine Newsletter-Anmeldung!"
-    );
-
-    newsletterForm.reset();
+  }, 1200);
 });
