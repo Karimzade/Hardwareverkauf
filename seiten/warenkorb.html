@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Warenkorb | HardwareHub</title>
+
+    <link rel="stylesheet" href="../css/warenkorb.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <a href="../index.html" class="logo">HardwareHub</a>
+
+        <nav class="navigation">
+            <a href="../index.html">Startseite</a>
+            <a href="produkte.html">Produkte</a>
+            <a href="angebote.html">Angebote</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="kontakt.html">Kontakt</a>
+
+            <a href="warenkorb.html" class="active cart-link">
+                Warenkorb
+                <span id="cart-count">0</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main class="cart-container">
+
+    <div class="cart-heading">
+        <div>
+            <p class="eyebrow">Deine Auswahl</p>
+            <h1>Warenkorb</h1>
+        </div>
+
+        <a href="produkte.html" class="continue-shopping">
+            Weiter einkaufen
+        </a>
+    </div>
+
+    <section class="cart-layout">
+
+        <div>
+            <div id="cart-items" class="cart-items"></div>
+
+            <div id="empty-cart" class="empty-cart" hidden>
+                <h2>Dein Warenkorb ist leer</h2>
+                <p>Füge zuerst ein Produkt aus unserem Shop hinzu.</p>
+
+                <a href="produkte.html">
+                    Produkte ansehen
+                </a>
+            </div>
+        </div>
+
+        <aside class="cart-summary">
+            <h2>Zusammenfassung</h2>
+
+            <div class="summary-row">
+                <span>Zwischensumme</span>
+                <strong id="subtotal">0,00 €</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Versand</span>
+                <strong>Kostenlos</strong>
+            </div>
+
+            <div class="summary-row total-row">
+                <span>Gesamtsumme</span>
+                <strong id="total-price">0,00 €</strong>
+            </div>
+
+            <button id="checkout-button" type="button">
+                Zur Kasse
+            </button>
+
+            <button id="clear-cart-button" type="button">
+                Warenkorb leeren
+            </button>
+        </aside>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 HardwareHub. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script src="../js/warenkorb.js"></script>
+
+</body>
+</html>
