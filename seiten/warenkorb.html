@@ -1,105 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dein Warenkorb bei HardwareHub." />
     <title>Warenkorb | HardwareHub</title>
 
-    <link rel="stylesheet" href="../css/warenkorb.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
-<body>
+    <link rel="stylesheet" href="../css/kontakt.css" />
 
-<header class="header">
-    <div class="header-container">
-        <a href="../index.html" class="logo">HardwareHub</a>
+    <link rel="stylesheet" href="../css/alle-angebote.css" />
 
-        <nav class="navigation">
-            <a href="../index.html">Startseite</a>
-            <a href="produkte.html">Produkte</a>
-            <a href="angebote.html">Angebote</a>
-            <a href="ueber-uns.html">Über uns</a>
-            <a href="kontakt.html">Kontakt</a>
-
-            <a href="warenkorb.html" class="active cart-link">
-                Warenkorb
-                <span id="cart-count">0</span>
-            </a>
-        </nav>
-    </div>
-</header>
-
-<main class="cart-container">
-
-    <div class="cart-heading">
-        <div>
-            <p class="eyebrow">Deine Auswahl</p>
-            <h1>Warenkorb</h1>
-        </div>
-
-        <a href="produkte.html" class="continue-shopping">
-            Weiter einkaufen
+    <link rel="stylesheet" href="../css/warenkorb.css" />
+  </head>
+  <body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="header">
+      <div class="header-top container">
+        <a
+          href="../index.html"
+          class="logo"
+          aria-label="HardwareHub Startseite"
+        >
+          <span class="logo-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </span>
+          <span>
+            Hardware<span>Hub</span>
+            <small>Technik für jeden Tag.</small>
+          </span>
         </a>
-    </div>
 
-    <section class="cart-layout">
+        <form class="search-form" action="produkte.html" method="get">
+          <input
+            type="search"
+            name="search"
+            placeholder="Suche nach Produkten..."
+            aria-label="Produkte suchen"
+          />
+          <button type="submit" aria-label="Suchen">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
 
+        <div class="header-actions">
+          <a href="#" class="header-link">
+            <i class="fa-regular fa-user"></i>
+            <span>Konto</span>
+          </a>
+
+          <a
+            href="warenkorb.html"
+            class="header-link cart-link active"
+            aria-current="page"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Warenkorb</span>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="navigation">
+        <div class="container nav-content">
+          <button
+            type="button"
+            class="menu-button"
+            id="menuButton"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="navList"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <ul class="nav-list" id="navList">
+            <li><a href="../index.html">Startseite</a></li>
+            <li><a href="produkte.html">Produkte</a></li>
+            <li><a href="alle-angebote.html">Angebote</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="cart-container">
+      <div class="cart-heading">
         <div>
-            <div id="cart-items" class="cart-items"></div>
+          <p class="eyebrow">Deine Auswahl</p>
+          <h1>Warenkorb</h1>
+        </div>
+        <a href="produkte.html" class="continue-shopping"> Weiter einkaufen </a>
+      </div>
 
-            <div id="empty-cart" class="empty-cart" hidden>
-                <h2>Dein Warenkorb ist leer</h2>
-                <p>Füge zuerst ein Produkt aus unserem Shop hinzu.</p>
+      <section class="cart-layout">
+        <div>
+          <div id="cart-items" class="cart-items"></div>
 
-                <a href="produkte.html">
-                    Produkte ansehen
-                </a>
-            </div>
+          <div id="empty-cart" class="empty-cart" hidden>
+            <h2>Dein Warenkorb ist leer</h2>
+            <p>Füge zuerst ein Produkt aus unserem Shop hinzu.</p>
+            <a href="produkte.html"> Produkte ansehen </a>
+          </div>
         </div>
 
         <aside class="cart-summary">
-            <h2>Zusammenfassung</h2>
+          <h2>Zusammenfassung</h2>
 
-            <div class="summary-row">
-                <span>Zwischensumme</span>
-                <strong id="subtotal">0,00 €</strong>
-            </div>
+          <div class="summary-row">
+            <span>Zwischensumme</span>
+            <strong id="subtotal">0,00 €</strong>
+          </div>
 
-            <div class="summary-row">
-                <span>Versand</span>
-                <strong>Kostenlos</strong>
-            </div>
+          <div class="summary-row">
+            <span>Versand</span>
+            <strong>Kostenlos</strong>
+          </div>
 
-            <div class="summary-row total-row">
-                <span>Gesamtsumme</span>
-                <strong id="total-price">0,00 €</strong>
-            </div>
+          <div class="summary-row total-row">
+            <span>Gesamtsumme</span>
+            <strong id="total-price">0,00 €</strong>
+          </div>
 
-            <button id="checkout-button" type="button">
-                Zur Kasse
-            </button>
-
-            <button id="clear-cart-button" type="button">
-                Warenkorb leeren
-            </button>
+          <button id="checkout-button" type="button">Zur Kasse</button>
+          <button id="clear-cart-button" type="button">Warenkorb leeren</button>
         </aside>
+      </section>
+    </main>
 
-    </section>
+    <!-- Notification -->
+    <div
+      id="notification"
+      class="notification"
+      role="status"
+      aria-live="polite"
+    ></div>
 
-</main>
-
- <footer class="footer">
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
+          <a
+            href="../index.html"
+            class="logo"
+            aria-label="HardwareHub Startseite"
+          >
             <span class="logo-icon">
               <i class="fa-solid fa-microchip"></i>
             </span>
-
             <span>
               Hardware<span>Hub</span>
-
               <small>Technik für jeden Tag.</small>
             </span>
           </a>
@@ -110,99 +172,63 @@
           </p>
 
           <div class="social-links">
-            <a href="#" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-
-            <a href="#" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#" aria-label="X">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-
-            <a href="#" aria-label="YouTube">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="X"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
           </div>
         </div>
 
         <div class="footer-column">
           <h3>Schnellzugriff</h3>
-
-          <a href="index.html">Startseite</a>
-
-          <a href="seiten/produkte.html">Produkte</a>
-
-          <a href="seiten/angebote.html">Angebote</a>
-
-          <a href="seiten/ueber-uns.html">Über uns</a>
-
+          <a href="../index.html">Startseite</a>
+          <a href="produkte.html">Produkte</a>
+          <a href="alle-angebote.html">Angebote</a>
+          <a href="ueber-uns.html">Über uns</a>
           <a href="kontakt.html">Kontakt</a>
         </div>
 
         <div class="footer-column">
           <h3>Kundenservice</h3>
-
           <a href="#">Versand & Lieferung</a>
-
           <a href="#">Zahlung & Sicherheit</a>
-
           <a href="#">Rückgabe</a>
-
           <a href="#">FAQ</a>
-
           <a href="kontakt.html">Kontakt</a>
         </div>
 
         <div class="footer-column">
           <h3>Kontakt</h3>
-
-          <p>
-            <i class="fa-solid fa-phone"></i>
-
-            +49 30 12345678
-          </p>
-
-          <p>
-            <i class="fa-solid fa-envelope"></i>
-
-            info@hardwarehub.de
-          </p>
-
-          <p>
-            <i class="fa-solid fa-location-dot"></i>
-
-            Berlin, Deutschland
-          </p>
+          <p><i class="fa-solid fa-phone"></i> +49 30 12345678</p>
+          <p><i class="fa-solid fa-envelope"></i> info@hardwarehub.de</p>
+          <p><i class="fa-solid fa-location-dot"></i> Berlin, Deutschland</p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div class="container footer-bottom-content">
           <p>
-            © <span id="currentYear"></span>
-
-            HardwareHub GmbH. Alle Rechte vorbehalten.
+            © <span id="currentYear"></span> HardwareHub GmbH. Alle Rechte
+            vorbehalten.
           </p>
-
           <div>
             <a href="#">Datenschutz</a>
-
             <a href="#">AGB</a>
-
             <a href="#">Impressum</a>
           </div>
         </div>
       </div>
-
-      <div class="container">
-        <p>&copy; 2026 HardwareHub. Alle Rechte vorbehalten.</p>
-      </div>
     </footer>
 
-<script src="../js/warenkorb.js"></script>
-
-</body>
+    <!-- JavaScript -->
+    <script src="../js/warenkorb.js"></script>
+  </body>
 </html>

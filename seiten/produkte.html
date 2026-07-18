@@ -3,32 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Produkte | HardwareHub</title>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/kontakt.css" />
     <link rel="stylesheet" href="../css/produkte.css" />
   </head>
 
   <body>
     <header class="header">
-      <div class="header-container">
-        <a href="../index.html#home-section" class="logo">HardwareHub</a>
+      <div class="header-top container">
+        <a href="../index.html#home-section" class="logo">
+          <span class="logo-icon"><i class="fa-solid fa-microchip"></i></span>
+          <span
+            >Hardware<span>Hub</span><small>Technik für jeden Tag.</small></span
+          >
+        </a>
 
-        <nav class="navigation">
-          <a href="../index.html#home-section">Startseite</a>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Suche nach Produkten..."
+            aria-label="Produkte suchen"
+          />
+          <button type="submit" aria-label="Suchen">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
 
-          <a href="#" class="active">Produkte</a>
-
-          <a href="../index.html#angebote-component">Angebote</a>
-          <a href="../index.html#uber-uns-component">Über uns</a>
-          <a href="../index.html#kontakt-component">Kontakt</a>
-
-          <a href="warenkorb.html" class="cart-link">
-            Warenkorb
-            <span id="cart-count">0</span>
+        <div class="header-actions">
+          <a href="#" class="header-link"
+            ><i class="fa-regular fa-user"></i><span>Konto</span></a
+          >
+          <a href="warenkorb.html" class="header-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Warenkorb</span>
           </a>
-        </nav>
+        </div>
       </div>
+
+      <nav class="navigation">
+        <div class="container nav-content">
+          <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="nav-list" id="navList">
+            <li><a href="../index.html#home-section">Startseite</a></li>
+            <li><a href="#" class="active">Produkte</a></li>
+            <li><a href="../index.html#angebote-component">Angebote</a></li>
+            <li><a href="../index.html#uber-uns-component">Über uns</a></li>
+            <li><a href="../index.html#kontakt-component">Kontakt</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <main class="main-container">
@@ -44,45 +75,34 @@
         <!-- سمت چپ: دسته‌بندی‌ها -->
         <aside class="category-sidebar">
           <h2>Kategorien</h2>
-
           <button class="category-button active" data-category="alle">
             Alle Produkte
           </button>
-
           <button class="category-button" data-category="laptop">
             Laptops
           </button>
-
           <button class="category-button" data-category="monitor">
             Monitore
           </button>
-
           <button class="category-button" data-category="headphone">
             Kopfhörer
           </button>
-
           <button class="category-button" data-category="case">
             PC-Gehäuse
           </button>
-
           <button class="category-button" data-category="keyboard">
             Tastaturen
           </button>
-
           <button class="category-button" data-category="mouse">Mäuse</button>
-
           <button class="category-button" data-category="smartphone">
             Smartphones
           </button>
-
           <button class="category-button" data-category="tablet">
             Tablets
           </button>
-
           <button class="category-button" data-category="storage">
             Speicher
           </button>
-
           <button class="category-button" data-category="component">
             PC-Komponenten
           </button>
@@ -95,7 +115,6 @@
               <p class="eyebrow">Kategorie</p>
               <h2 id="category-title">Alle Produkte</h2>
             </div>
-
             <div class="search-wrapper">
               <label for="product-search">Produkt suchen</label>
               <input
@@ -107,7 +126,6 @@
           </div>
 
           <div id="products-grid" class="products-grid"></div>
-
           <p id="no-products" class="no-products" hidden>
             Keine Produkte gefunden.
           </p>
@@ -118,9 +136,84 @@
     <div id="notification" class="notification" aria-live="polite"></div>
 
     <footer class="footer">
-      <p>&copy; 2026 HardwareHub. Alle Rechte vorbehalten.</p>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-microchip"></i></span>
+            <span
+              >Hardware<span>Hub</span
+              ><small>Technik für jeden Tag.</small></span
+            >
+          </a>
+          <p>
+            Dein zuverlässiger Partner für hochwertige Computer-Hardware zu
+            fairen Preisen.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="X"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Schnellzugriff</h3>
+          <a href="../index.html">Startseite</a>
+          <a href="#">Produkte</a>
+          <a href="../index.html#angebote-component">Angebote</a>
+          <a href="../index.html#uber-uns-component">Über uns</a>
+          <a href="../index.html#kontakt-component">Kontakt</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Kundenservice</h3>
+          <a href="#">Versand & Lieferung</a>
+          <a href="#">Zahlung & Sicherheit</a>
+          <a href="#">Rückgabe</a>
+          <a href="#">FAQ</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Kontakt</h3>
+          <p><i class="fa-solid fa-phone"></i> +49 30 12345678</p>
+          <p><i class="fa-solid fa-envelope"></i> info@hardwarehub.de</p>
+          <p><i class="fa-solid fa-location-dot"></i> Berlin, Deutschland</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-content">
+          <p>
+            © <span id="currentYear">2026</span> HardwareHub GmbH. Alle Rechte
+            vorbehalten.
+          </p>
+          <div>
+            <a href="#">Datenschutz</a>
+            <a href="#">AGB</a>
+            <a href="#">Impressum</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="../js/produkte.js"></script>
+    <script>
+      const menuButton = document.getElementById("menuButton");
+      const navList = document.getElementById("navList");
+      if (menuButton && navList) {
+        menuButton.addEventListener("click", () => {
+          navList.classList.toggle("open");
+        });
+      }
+    </script>
   </body>
 </html>
