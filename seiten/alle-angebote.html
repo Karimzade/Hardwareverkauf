@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Entdecke aktuelle Angebote und reduzierte Hardware-Produkte bei HardwareHub."
+    >
+
+    <title>Alle Angebote | HardwareHub</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/alle-angebote.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="header-top container">
+
+            <a
+                href="../index.html"
+                class="logo"
+                aria-label="HardwareHub Startseite"
+            >
+                <span class="logo-icon">
+                    <i class="fa-solid fa-microchip"></i>
+                </span>
+
+                <span>
+                    Hardware<span>Hub</span>
+
+                    <small>
+                        Technik für jeden Tag.
+                    </small>
+                </span>
+            </a>
+
+            <form
+                class="search-form"
+                action="produkte.html"
+                method="get"
+            >
+                <input
+                    type="search"
+                    name="search"
+                    placeholder="Suche nach Produkten..."
+                    aria-label="Produkte suchen"
+                >
+
+                <button
+                    type="submit"
+                    aria-label="Suchen"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <div class="header-actions">
+
+                <a
+                    href="#"
+                    class="header-link"
+                >
+                    <i class="fa-regular fa-user"></i>
+
+                    <span>Konto</span>
+                </a>
+
+                <a
+                    href="warenkorb.html"
+                    class="header-link cart-link"
+                >
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>Warenkorb</span>
+
+                    <span id="cart-count">
+                        0
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <nav class="navigation">
+
+            <div class="container nav-content">
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Menü öffnen"
+                    aria-expanded="false"
+                    aria-controls="navList"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <ul
+                    class="nav-list"
+                    id="navList"
+                >
+                    <li>
+                        <a href="../index.html">
+                            Startseite
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="produkte.html">
+                            Produkte
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="alle-angebote.html"
+                            class="active"
+                            aria-current="page"
+                        >
+                            Angebote
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="ueber-uns.html">
+                            Über uns
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kontakt.html">
+                            Kontakt
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <!-- Hero -->
+
+        <section class="offer-hero">
+
+            <div class="offer-hero-content">
+
+                <div class="offer-hero-text">
+
+                    <span class="hero-label">
+                        Nur für kurze Zeit
+                    </span>
+
+                    <h1>
+                        Top-Hardware zu attraktiven Preisen
+                    </h1>
+
+                    <p>
+                        Entdecke unsere aktuellen Angebote für Laptops,
+                        Monitore, Gaming-Zubehör und weitere digitale Produkte.
+                    </p>
+
+                    <a
+                        href="#angebote"
+                        class="hero-button"
+                    >
+                        Angebote entdecken
+                    </a>
+
+                </div>
+
+                <div
+                    class="hero-discount"
+                    aria-label="Bis zu 40 Prozent Rabatt"
+                >
+                    <span>Bis zu</span>
+
+                    <strong>40 %</strong>
+
+                    <span>Rabatt</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Vorteile -->
+
+        <section
+            class="benefits"
+            aria-label="Vorteile"
+        >
+
+            <article class="benefit">
+
+                <span class="benefit-icon">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+
+                <div>
+                    <h2>Geprüfte Qualität</h2>
+
+                    <p>
+                        Hochwertige Produkte von zuverlässigen Herstellern.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="benefit">
+
+                <span class="benefit-icon">
+                    <i class="fa-solid fa-euro-sign"></i>
+                </span>
+
+                <div>
+                    <h2>Attraktive Preise</h2>
+
+                    <p>
+                        Ausgewählte Hardware mit besonderen Rabatten.
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="benefit">
+
+                <span class="benefit-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </span>
+
+                <div>
+                    <h2>Schneller Versand</h2>
+
+                    <p>
+                        Kostenlose Lieferung für viele unserer Angebote.
+                    </p>
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- Angebote -->
+
+        <section
+            class="offers-section"
+            id="angebote"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        Reduzierte Produkte
+                    </p>
+
+                    <h2>
+                        Aktuelle Angebote
+                    </h2>
+
+                    <p>
+                        Sichere dir ausgewählte Hardware-Produkte
+                        zum reduzierten Preis.
+                    </p>
+                </div>
+
+                <div class="offer-controls">
+
+                    <div class="search-group">
+
+                        <label for="offer-search">
+                            Produkt suchen
+                        </label>
+
+                        <input
+                            type="search"
+                            id="offer-search"
+                            placeholder="z. B. Laptop"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="filter-group">
+
+                        <label for="offer-filter">
+                            Kategorie
+                        </label>
+
+                        <select id="offer-filter">
+
+                            <option value="alle">
+                                Alle Angebote
+                            </option>
+
+                            <option value="laptop">
+                                Laptops
+                            </option>
+
+                            <option value="monitor">
+                                Monitore
+                            </option>
+
+                            <option value="headphone">
+                                Kopfhörer
+                            </option>
+
+                            <option value="keyboard">
+                                Tastaturen
+                            </option>
+
+                            <option value="mouse">
+                                Mäuse
+                            </option>
+
+                            <option value="storage">
+                                Speicher
+                            </option>
+
+                            <option value="component">
+                                PC-Komponenten
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="sort-group">
+
+                        <label for="offer-sort">
+                            Sortierung
+                        </label>
+
+                        <select id="offer-sort">
+
+                            <option value="default">
+                                Empfohlen
+                            </option>
+
+                            <option value="discount-desc">
+                                Höchster Rabatt
+                            </option>
+
+                            <option value="price-asc">
+                                Preis aufsteigend
+                            </option>
+
+                            <option value="price-desc">
+                                Preis absteigend
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="offers-grid"
+                class="offers-grid"
+            ></div>
+
+            <div
+                id="no-offers"
+                class="no-offers"
+                hidden
+            >
+                <h3>
+                    Keine Angebote gefunden
+                </h3>
+
+                <p>
+                    Ändere den Suchbegriff oder wähle eine andere Kategorie.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Newsletter -->
+
+        <section class="newsletter">
+
+            <div>
+
+                <p class="eyebrow">
+                    Keine Angebote verpassen
+                </p>
+
+                <h2>
+                    Hardware-Deals direkt per E-Mail
+                </h2>
+
+                <p>
+                    Erhalte Informationen über neue Produkte und Rabatte.
+                </p>
+
+            </div>
+
+            <div class="newsletter-form">
+
+                <label for="newsletter-email">
+                    E-Mail-Adresse
+                </label>
+
+                <div class="newsletter-input-group">
+
+                    <input
+                        type="email"
+                        id="newsletter-email"
+                        placeholder="name@beispiel.de"
+                        autocomplete="email"
+                    >
+
+                    <button
+                        type="button"
+                        id="newsletter-button"
+                    >
+                        Anmelden
+                    </button>
+
+                </div>
+
+                <p
+                    id="newsletter-message"
+                    aria-live="polite"
+                ></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Notification -->
+
+    <div
+        id="notification"
+        class="notification"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a
+                    href="../index.html"
+                    class="logo"
+                    aria-label="HardwareHub Startseite"
+                >
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </span>
+
+                    <span>
+                        Hardware<span>Hub</span>
+
+                        <small>
+                            Technik für jeden Tag.
+                        </small>
+                    </span>
+                </a>
+
+                <p>
+                    Dein zuverlässiger Partner für hochwertige
+                    Computer-Hardware zu fairen Preisen.
+                </p>
+
+                <div class="social-links">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="X"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Schnellzugriff</h3>
+
+                <a href="../index.html">
+                    Startseite
+                </a>
+
+                <a href="produkte.html">
+                    Produkte
+                </a>
+
+                <a href="alle-angebote.html">
+                    Angebote
+                </a>
+
+                <a href="ueber-uns.html">
+                    Über uns
+                </a>
+
+                <a href="kontakt.html">
+                    Kontakt
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Kundenservice</h3>
+
+                <a href="#">
+                    Versand & Lieferung
+                </a>
+
+                <a href="#">
+                    Zahlung & Sicherheit
+                </a>
+
+                <a href="#">
+                    Rückgabe
+                </a>
+
+                <a href="#">
+                    FAQ
+                </a>
+
+                <a href="kontakt.html">
+                    Kontakt
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Kontakt</h3>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+
+                    +49 30 12345678
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+
+                    info@hardwarehub.de
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Berlin, Deutschland
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    HardwareHub GmbH. Alle Rechte vorbehalten.
+                </p>
+
+                <div>
+                    <a href="#">
+                        Datenschutz
+                    </a>
+
+                    <a href="#">
+                        AGB
+                    </a>
+
+                    <a href="#">
+                        Impressum
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="../js/alle-angebote.js"></script>
+
+</body>
+</html>

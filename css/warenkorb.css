@@ -269,13 +269,264 @@ a {
     font-weight: bold;
 }
 
+
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
-    padding: 28px 20px;
-    background-color: var(--dark-blue);
     color: var(--white);
-    text-align: center;
+    background: var(--dark-blue);
 }
 
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 50px;
+    padding-top: 55px;
+    padding-bottom: 45px;
+}
+
+.footer-brand p {
+    max-width: 330px;
+    margin: 20px 0;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 11px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition:
+        background 0.2s,
+        transform 0.2s;
+}
+
+.social-links a:hover {
+    background: var(--orange);
+    transform: translateY(-2px);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.footer-column h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: var(--orange);
+}
+
+.footer-column p i {
+    width: 21px;
+    color: var(--orange);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.footer-bottom-content {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.footer-bottom-content div {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-bottom a:hover {
+    color: var(--orange);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 980px) {
+    .header-top {
+        grid-template-columns: auto 1fr;
+    }
+
+    .search-form {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin-bottom: 17px;
+    }
+
+    .header-actions {
+        justify-content: flex-end;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-information {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .header-top {
+        gap: 15px;
+    }
+
+    .header-actions span {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .nav-content {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding-bottom: 14px;
+    }
+
+    .nav-list.open {
+        display: flex;
+    }
+
+    .nav-list li,
+    .nav-list a {
+        width: 100%;
+    }
+
+    .nav-list a.active::after {
+        display: none;
+    }
+
+    .contact-section {
+        padding-top: 50px;
+    }
+
+    .contact-information {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-card {
+        padding: 23px 18px;
+    }
+
+    .map-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .newsletter-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        font-size: 25px;
+    }
+
+    .header-actions {
+        gap: 15px;
+    }
+
+    .contact-card {
+        padding: 18px;
+    }
+
+    .map-wrapper iframe {
+        height: 500px;
+    }
+
+    .map-information {
+        top: 15px;
+        left: 15px;
+        width: calc(100% - 30px);
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        min-height: 48px;
+        border-radius: 8px;
+    }
+
+    .footer-bottom-content div {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
 @media (max-width: 850px) {
     .header-container,
     .cart-heading {
